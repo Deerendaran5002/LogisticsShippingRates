@@ -1,11 +1,28 @@
-# Shipping Cost Calculator
+#!/bin/bash
+   # This script calculates simple interest given principal,
+   # annual rate of interest and time period in years.
 
-## Input package weight and shipping rate
-weight = float(input("Enter the package weight in kilograms: "))
-rate = float(input("Enter the shipping rate per kilogram: "))
+   # Do not use this in production. Sample purpose only.
 
-## Calculate shipping cost
-shipping_cost = weight * rate
+   # Author: Upkar Lidder (IBM)
+   # Additional Authors:
+   # <your GitHub username>
 
-## Display the result
-print(f"Shipping Cost: {shipping_cost} USD")
+   # Input:
+   # p, principal amount
+   # t, time period in years
+   # r, annual rate of interest
+
+   # Output:
+   # simple interest = p*t*r
+
+   echo "Enter the principal:"
+   read p
+   echo "Enter time period in years:"
+   read t
+   echo "Enter rate of interest per year:"
+   read r
+
+   s=$(echo "scale=2; $p * $t * $r / 100" | bc)
+   echo "The simple interest is: "
+   echo $s
